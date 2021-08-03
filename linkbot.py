@@ -1,1 +1,2 @@
-import discord
+# import discord
+print ("hello world")

@@ -1,10 +1,19 @@
 import discord
-from discord.ext import commands
+import os
 
-client = commands.Bot(command_prefix='.')
+client = discord.Client()
 
 @client.event
 async def on_ready():
-    print('bot is ready.')
+  print ('We have logged in as {0.user}'.format(client))
 
-client.run('')
+  @client.event
+  async def on_message(message):
+    if message.author == client.user:
+      return
+
+    if message.content.endswith('.com'):
+      channel = client.get_channel(891325419930935396)
+      await channel.send(message.content)      
+
+client.run(os.getenv('TOKEN'))

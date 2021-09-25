@@ -14,6 +14,6 @@ async def on_ready():
 
     if message.content.endswith('.com'):
       channel = client.get_channel(891325419930935396)
-      await channel.send(message.content)      
+      await channel.send(message.content)
 
-client.run(os.getenv('TOKEN'))
+client.run(os.getenv('token'))

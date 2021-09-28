@@ -15,8 +15,10 @@ async def on_ready():
 
     if message.content.endswith('.com'):
       await channel.send(message.content)
+      await message.delete()
     
     elif message.content.startswith('https'):
       await channel.send(message.content)
+      await message.delete()
 
 client.run(os.getenv('token'))

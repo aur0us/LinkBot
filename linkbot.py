@@ -9,11 +9,14 @@ async def on_ready():
 
   @client.event
   async def on_message(message):
+    channel = client.get_channel(891325419930935396)
     if message.author == client.user:
       return
 
     if message.content.endswith('.com'):
-      channel = client.get_channel(891325419930935396)
+      await channel.send(message.content)
+    
+    elif message.content.startswith('https'):
       await channel.send(message.content)
 
 client.run(os.getenv('token'))

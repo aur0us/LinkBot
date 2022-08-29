@@ -2,6 +2,7 @@ import discord
 import os
 
 client = discord.Client()
+channelId = os.getenv('linkChannel')
 
 @client.event
 async def on_ready():
@@ -9,11 +10,11 @@ async def on_ready():
 
   @client.event
   async def on_message(message):
-    channel = client.get_channel(891325419930935396)
+    channel = client.get_channel(int(channelId))
     if message.author == client.user:
       return
 
-    elif message.content.startswith('https' or 'http'): 
+    elif message.content.startswith('https' or 'http'):
       await channel.send(message.content)
       await message.delete()
 

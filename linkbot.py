@@ -13,11 +13,7 @@ async def on_ready():
     if message.author == client.user:
       return
 
-    if message.content.endswith('.com'):
-      await channel.send(message.content)
-      await message.delete()
-    
-    elif message.content.startswith('https'):
+    elif message.content.startswith('https' or 'http'): 
       await channel.send(message.content)
       await message.delete()
 

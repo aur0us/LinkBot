@@ -1,0 +1,3 @@
+import linkDeleter
+
+linkDeleter.deleteLink();

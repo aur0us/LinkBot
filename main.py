@@ -1,3 +1,6 @@
 import linkDeleter
+import discord
+import os
 
-linkDeleter.deleteLink();
+client = discord.Client()
+linkDeleter.deleteLink(client);
